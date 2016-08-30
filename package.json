@@ -1,6 +1,6 @@
 {
   "name": "react-iframe-resizer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "iframe component enhanced by iframe-resizer",
   "main": "dist/index.js",
   "js:next": "src/index.js",
