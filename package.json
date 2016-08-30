@@ -1,0 +1,39 @@
+{
+  "name": "react-iframe-resizer",
+  "version": "0.1.0",
+  "description": "iframe component enhanced by iframe-resizer",
+  "main": "dist/index.js",
+  "js:next": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint --ext .js --ignore-path .gitignore --ignore-pattern rollup.config.js .",
+    "prepublish": "npm run build"
+  },
+  "author": "James Canning <james@jamescanning.com> (http://brudil.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theprate/react-iframe-resizer.git"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.2.0",
+    "rollup": "^0.34.10",
+    "rollup-plugin-buble": "^0.13.0"
+  },
+  "peerDependencies": {
+    "iframe-resizer": "*",
+    "react": "*"
+  },
+  "dependencies": {
+    "lodash.omit": "^4.5.0",
+    "object-assign": "^4.1.0"
+  }
+}
