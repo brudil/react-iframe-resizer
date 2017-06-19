@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes form 'prop-types';
+import PropTypes from 'prop-types';
 import omit from 'lodash.omit';
-// eslint-disable-next-line no-unused-vars
 import objectAssign from 'object-assign';
 import iframeResizer from 'iframe-resizer/js/iframeResizer';
 
@@ -12,11 +11,25 @@ class ResizerManagedIframe extends React.PureComponent {
     super(props);
 
     this.callbacks = {
-      closeCallback: props.onCloseRequest ? () = props.onCloseRequest() : noop,
-      initCallback: props.onInit ? () = props.onInit() : noop,
-      messageCallback: props.onMessage ? ({ msg }) => props.onMessage(msg) : () => console.warn('Unhandled message from iFrame')),
-      resizeCallback: props.onResize ? ({ height, width, type }) => props.onResize({ height, width, type }) : noop,
-      scrollCallback: props.onScroll || () => true),
+      closeCallback: props.onCloseRequest
+        ? () => props.onCloseRequest()
+        : noop,
+
+      initCallback: props.onInit
+        ? () => props.onInit()
+        : noop,
+
+      messageCallback: props.onMessage
+        ? ({ msg }) => props.onMessage(msg)
+        : () => console.warn('Unhandled message from iFrame'), // eslint-disable-line no-console
+
+      resizeCallback: props.onResize
+        ? ({ height, width, type }) => props.onResize({ height, width, type })
+        : noop,
+
+      scrollCallback: props.onScroll
+        ? props.onScroll
+        : () => true,
     };
 
     this.omitProps = [
@@ -33,7 +46,7 @@ class ResizerManagedIframe extends React.PureComponent {
   }
 
   componentDidMount() {
-    const options = Object.assign({ __mode: 'react' }, this.props.options, this.callbacks);
+    const options = objectAssign({ __mode: 'react' }, this.props.options, this.callbacks);
     this.iframeResizer = iframeResizer(options, this.iframeElement);
   }
 
