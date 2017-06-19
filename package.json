@@ -1,6 +1,6 @@
 {
   "name": "react-iframe-resizer",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "iframe component enhanced by iframe-resizer",
   "main": "dist/index.js",
   "js:next": "src/index.js",
@@ -34,12 +34,11 @@
   },
   "peerDependencies": {
     "iframe-resizer": "*",
-    "react": "*"
+    "react": "*",
+    "prop-types": "*"
   },
   "dependencies": {
-    "iframe-resizer": "^3.5.14",
     "lodash.omit": "^4.5.0",
-    "object-assign": "^4.1.0",
-    "react": "^15.6.1"
+    "object-assign": "^4.1.0"
   }
 }

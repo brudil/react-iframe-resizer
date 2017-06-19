@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes form 'prop-types';
 import omit from 'lodash.omit';
 // eslint-disable-next-line no-unused-vars
 import objectAssign from 'object-assign';
@@ -54,14 +55,14 @@ class ResizerManagedIframe extends React.PureComponent {
 }
 
 ResizerManagedIframe.propTypes = {
-  children: React.PropTypes.node,
-  src: React.PropTypes.string,
-  options: React.PropTypes.object,
-  onCloseRequest: React.PropTypes.func,
-  onInit: React.PropTypes.func,
-  onMessage: React.PropTypes.func,
-  onResize: React.PropTypes.func,
-  onScroll: React.PropTypes.func,
+  children: PropTypes.node,
+  src: PropTypes.string,
+  options: PropTypes.object,
+  onCloseRequest: PropTypes.func,
+  onInit: PropTypes.func,
+  onMessage: PropTypes.func,
+  onResize: PropTypes.func,
+  onScroll: PropTypes.func,
 };
 
 ResizerManagedIframe.defaultProps = {
