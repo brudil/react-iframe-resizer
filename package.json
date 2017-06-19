@@ -37,7 +37,9 @@
     "react": "*"
   },
   "dependencies": {
+    "iframe-resizer": "^3.5.14",
     "lodash.omit": "^4.5.0",
-    "object-assign": "^4.1.0"
+    "object-assign": "^4.1.0",
+    "react": "^15.6.1"
   }
 }

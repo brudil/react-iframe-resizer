@@ -1,4 +1,5 @@
 {
+  "presets": ["es2015", "stage-1", "react"],
   "extends": [
     "eslint-config-airbnb"
   ],
@@ -6,6 +7,7 @@
     "browser": true
   },
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "no-return-assign": 0
   }
 }
