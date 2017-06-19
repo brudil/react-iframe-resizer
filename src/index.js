@@ -13,9 +13,9 @@ class ResizerManagedIframe extends React.PureComponent {
     this.callbacks = {
       closeCallback: props.onCloseRequest || noop,
       initCallback: props.onInit || noop,
-      messageCallback: props.onMessage || noop,
+      messageCallback: props.onMessage || () => console.warn('Unhandled message from iFrame')),
       resizeCallback: props.onResize || noop,
-      scrollCallback: props.onScroll || noop,
+      scrollCallback: props.onScroll || () => true),
     };
 
     this.omitProps = [
