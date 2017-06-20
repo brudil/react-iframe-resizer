@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.contentWindow.js"></script>
+    <style>
+      .big-box {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function contentLoaded() {
+        const box = document.querySelector('.big-box');
+        let height = 300;
+        let down = true;
+        setInterval(function() {
+          if (down) {
+            height += 20;
+          } else {
+            height -= 20;
+          }
+          if (down && height > 600) {
+            down = false;
+          } else if (!down && height < 40) {
+            down = true;
+          }
+          box.style.height = height + 'px';
+        }, 100);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Dynamic iframe</h1>
+    <div class="big-box"></div>
+  </body>
+</html>
