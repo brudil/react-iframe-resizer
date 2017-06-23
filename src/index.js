@@ -11,7 +11,9 @@ class ResizerManagedIframe extends React.PureComponent {
     super(props);
 
     this.callbacks = {
-      closeCallback: props.onCloseRequest
+      closeCallback: noop,
+      
+      closeRequestCallback: props.onCloseRequest
         ? () => props.onCloseRequest()
         : noop,
 
