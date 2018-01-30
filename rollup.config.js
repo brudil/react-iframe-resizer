@@ -1,20 +1,21 @@
-import buble from 'rollup-plugin-buble';
-
-const external = [
-  'iframe-resizer/js/iframeResizer',
-  'react',
-  'object-assign',
-  'lodash.omit',
-];
+import typescript from 'rollup-plugin-typescript2';
+import uglify from 'rollup-plugin-uglify';
 
 export default {
-  entry: 'src/index.js',
-  external,
-  plugins: [
-    buble({
-      objectAssign: 'objectAssign',
-    }),
+  input: './src/index.tsx',
+  output: [
+    {
+      file: './dist/index.js',
+      format: 'cjs',
+    },
+    {
+      file: './dist/index.es.js',
+      format: 'es',
+    }
   ],
-  format: 'cjs',
-  dest: 'dist/index.js',
-};
+  external: ['react', 'iframe-resizer/js/iframeResizer'],
+  plugins: [
+    typescript(),
+    uglify()
+  ]
+}
