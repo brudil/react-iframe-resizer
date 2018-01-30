@@ -1,9 +1,11 @@
 {
   "name": "react-iframe-resizer",
-  "version": "1.0.1",
+  "version": "2.0.0-dev",
   "description": "iframe component enhanced by iframe-resizer",
   "main": "dist/index.js",
-  "js:next": "src/index.js",
+  "module": "dist/index.es.js",
+  "source": "src/index.tsx",
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -12,9 +14,10 @@
     "LICENSE.md"
   ],
   "scripts": {
+    "prepare": "tsc --outDir dist && microbundle",
     "build": "rollup -c",
-    "lint": "eslint --ext .js --ignore-path .gitignore --ignore-pattern rollup.config.js .",
-    "prepublish": "npm run build"
+    "dev": "rollup -c --watch",
+    "test": "jest"
   },
   "author": "James Canning <james@jamescanning.com> (http://brudil.com)",
   "license": "MIT",
@@ -23,21 +26,20 @@
     "url": "https://github.com/theprate/react-iframe-resizer.git"
   },
   "devDependencies": {
-    "eslint": "^3.4.0",
-    "eslint-config-airbnb": "^10.0.1",
-    "eslint-loader": "^1.5.0",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.0",
-    "eslint-plugin-react": "^6.2.0",
-    "rollup": "^0.34.10",
-    "rollup-plugin-buble": "^0.13.0"
+    "@types/iframe-resizer": "^3.5.4",
+    "@types/lodash.omit": "^4.5.3",
+    "@types/react": "^16.0.35",
+    "microbundle": "^0.4.3",
+    "react": "^16.2.0",
+    "rollup": "^0.55.1",
+    "rollup-plugin-typescript2": "^0.10.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "typescript": "^2.6.2"
   },
   "peerDependencies": {
-    "iframe-resizer": "*",
     "react": "*"
   },
   "dependencies": {
-    "lodash.omit": "^4.5.0",
-    "object-assign": "^4.1.0"
+    "lodash.omit": "^4.5.0"
   }
 }
